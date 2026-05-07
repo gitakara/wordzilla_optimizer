@@ -417,6 +417,167 @@ textarea:focus {
     transition: width 0.3s var(--ease-in-out), background 0.3s;
 }
 
+/* =======================================================
+   MOBILE RESPONSIVE
+======================================================= */
+
+@media (max-width: 768px) {
+
+    body {
+        height: auto;
+    }
+
+    .main-header {
+        padding: 14px 16px;
+    }
+
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    h1 {
+        font-size: 1.1rem;
+    }
+
+    .header-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .btn-theme {
+        padding: 8px 14px;
+        font-size: 0.8rem;
+    }
+
+    .main-container {
+        flex-direction: column;
+        padding: 14px;
+        gap: 16px;
+        overflow: visible;
+    }
+
+    .editor-section {
+        width: 100%;
+    }
+
+    textarea {
+        min-height: 420px;
+        padding: 18px;
+        font-size: 0.95rem;
+        line-height: 1.7;
+        border-radius: 18px;
+    }
+
+    .editor-actions {
+        justify-content: stretch;
+    }
+
+    .btn-action {
+        width: 100%;
+        justify-content: center;
+        padding: 14px;
+        border-radius: 14px;
+        font-size: 0.9rem;
+    }
+
+    /* SIDEBAR JADI GRID MOBILE */
+    .sidebar {
+        width: 100%;
+        padding: 0;
+        border: none;
+        background: transparent;
+        box-shadow: none;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+    }
+
+    .stat-card {
+        padding: 16px;
+        border-radius: 18px;
+        background: var(--bg-surface);
+        border: 1px solid var(--border-subtle);
+        box-shadow: var(--shadow-subtle);
+    }
+
+    .keyword-finder-card {
+        grid-column: span 2;
+    }
+
+    .main-value {
+        font-size: 1.8rem;
+    }
+
+    .stat-label {
+        font-size: 0.72rem;
+    }
+
+    /* OVERLAY MOBILE */
+    .welcome-overlay {
+        padding: 16px;
+        bottom: -300px;
+    }
+
+    .overlay-content {
+        padding: 24px 18px;
+        border-radius: 20px;
+    }
+
+    .overlay-header h2 {
+        font-size: 1.5rem;
+        line-height: 1.3;
+    }
+
+    .overlay-header p {
+        font-size: 0.9rem;
+    }
+
+    .overlay-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .info-item {
+        text-align: left;
+    }
+
+    .start-typing {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+}
+
+/* EXTRA SMALL DEVICES */
+@media (max-width: 480px) {
+
+    .sidebar {
+        grid-template-columns: 1fr;
+    }
+
+    .keyword-finder-card {
+        grid-column: span 1;
+    }
+
+    textarea {
+        min-height: 380px;
+    }
+
+    .main-value {
+        font-size: 1.6rem;
+    }
+
+    .overlay-content {
+        padding: 20px 16px;
+    }
+
+    .overlay-header h2 {
+        font-size: 1.3rem;
+    }
+}
+
 .fill-neutral { background: var(--neutral); }
 .fill-success { background: var(--success); }
 .fill-warning { background: var(--warning); }
