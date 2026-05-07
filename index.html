@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordzilla Content Optimizer - Pilot Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="light">
+
+<header class="main-header">
+    <div class="header-content">
+        <h1>Wordzilla <span class="optimizer-text">Optimizer</span></h1>
+        <div class="header-actions">
+            <span class="status-badge pilot-project">Pilot Project</span>
+            <button class="btn-theme" id="themeToggle">
+                <span id="themeText">Dark Mode</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<main class="main-container">
+    <section class="editor-section">
+        <div id="welcomeOverlay" class="welcome-overlay">
+            <div class="overlay-content">
+                <div class="overlay-header">
+                    <h2>Selamat Datang di Wordzilla!</h2>
+                    <p>Alat cerdas untuk mengoptimalkan tulisan Anda agar lebih SEO-friendly dan enak dibaca.</p>
+                </div>
+                
+                <div class="overlay-grid">
+                    <div class="info-item">
+                        <span class="info-icon">📝</span>
+                        <h4>Analisis Real-time</h4>
+                        <p>Pantau jumlah kata dan estimasi waktu baca secara langsung saat Anda mengetik.</p>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">🎯</span>
+                        <h4>Target Kata Kunci</h4>
+                        <p>Gunakan fitur pencarian untuk memastikan kata kunci yang Anda targetkan tersebar dengan cukup.</p>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">📏</span>
+                        <h4>Struktur Paragraf</h4>
+                        <p>Saya akan memperingatkan Anda jika paragraf Anda terlalu padat dan sulit dibaca oleh pengguna ponsel/mobile.</p>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">✨</span>
+                        <h4>Pembersih Teks</h4>
+                        <p>Rapikan spasi ganda dan baris kosong yang berlebihan dengan satu klik.</p>
+                    </div>
+                </div>
+                <p class="start-typing">Mulai mengetik atau tempelkan draf Anda agar 'welcome overlay' ini menghilang...</p>
+            </div>
+        </div>
+        <textarea id="editor" placeholder="Tempelkan draf tulisanmu di sini..." spellcheck="false"></textarea>
+        <div class="editor-actions">
+            <button class="btn-action" id="cleanText">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-icon"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+                Bersihkan Format Teks
+            </button>
+        </div>
+    </section>
+
+    <aside class="sidebar">
+        <div class="stat-card keyword-finder-card">
+            <div class="stat-header">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="stat-icon"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <div class="stat-label">Temukan Kata Kunci</div>
+            </div>
+            <input type="text" id="keywordInput" class="keyword-input" placeholder="Ketik kata kunci...">
+            <div id="keywordResult" class="stat-value secondary-value">0 ditemukan</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-header">
+                <div class="stat-label">Jumlah Kata</div>
+            </div>
+            <div id="wordCount" class="stat-value main-value">0</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-header">
+                <div class="stat-label">Estimasi Waktu Baca</div>
+            </div>
+            <div id="readTime" class="stat-value main-value">0 <span class="unit">mnt</span></div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-header">
+                <div class="stat-label">Keterbacaan (Paragraf)</div>
+            </div>
+            <div id="paraStatus" class="alert alert-neutral">Siap menganalisis...</div>
+            <div class="indicator-container">
+                <div class="indicator-track">
+                    <div id="paraIndicator" class="indicator-fill fill-neutral" style="width: 0%;"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-header">
+                <div class="stat-label">SEO: Panjang Judul</div>
+            </div>
+            <div id="seoStatus" class="alert alert-neutral">Belum ada input</div>
+        </div>
+    </aside>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
